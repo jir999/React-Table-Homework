@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Edgar",
+    "surName": "Araqelyan",
+    "age": "28",
+    "pincode": "4422"
+  },
+  {
+    "name": "Karen",
+    "surName": "Movsisyan",
+    "age": 25,
+    "pincode": 1234
+  },
+  {
+    "name": "Avet",
+    "surName": "Barseghyan",
+    "age": 30,
+    "pincode": 6789
+  },
+  {
+    "name": "Angel",
+    "surName": "Gevorgyan",
+    "age": 20,
+    "pincode": 3467
+  }
+]

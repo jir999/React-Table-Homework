@@ -1,0 +1,6 @@
+const arr =  {
+    name: "k",
+    age: 10
+}
+
+export default arr;
