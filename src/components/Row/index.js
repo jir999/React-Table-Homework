@@ -1,4 +1,4 @@
-import AsyncImport from "../AsyncImport";
-import { lazy } from "react";
+import { lazy } from 'react';
+import AsyncImport from '../AsyncImport';
 
-export default AsyncImport(lazy(() => import("./Row")));
+export default AsyncImport(lazy(() => import('./Row')));

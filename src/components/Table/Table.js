@@ -1,37 +1,33 @@
-import React, { useState, useEffect } from "react";
-import Header from "../Header";
+import React, { useState, useEffect } from 'react';
+import Header from '../Header';
 // import Column from "../Column";
-import Row from "../Row";
-import Footer from "../Footer";
+import Row from '../Row';
+import Footer from '../Footer';
 
 const Table = () => {
   const [data, setData] = useState([]);
-  let fakeData;
+  const [length, setLength] = useState(0);
 
   useEffect(() => {
-    let newArr = [];
-    fetch("./data.json")
-      .then((res) => {
-        //console.log(res)
-        return res.json()
+    fetch('./data.json')
+      .then(res => {
+        return res.json();
       })
-      .then((arr) => {
-        console.log("result", arr)
-        fakeData = arr;
-        setData(arr)
+      .then(arr => {
+        setData(arr);
       });
   }, []);
 
-  useEffect(() => console.log("fakeData", fakeData))
-  useEffect(() => console.log("state", data))
+  useEffect(() => {
+    setLength(data.length);
+  }, [data])
 
   return (
     <div>
       <table>
         <Header />
-        {/* <Column /> */}
-        <Row rowData={fakeData} />
-        <Footer />
+        <Row rowData={data} test="test" />
+        <Footer render={(count) => (<th>{count}</th>)} count={length} />
       </table>
     </div>
   );

@@ -1,13 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 
-const Footer = ({ count }) => {
-  const [footerData, setFooterData] = useState(null);
-
+const Footer = ({ count, render }) => {
   return (
     <tfoot>
       <tr>
         <th>Count</th>
-        <th>{count}</th>
+        {render(count)}
       </tr>
     </tfoot>
   );

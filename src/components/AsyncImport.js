@@ -1,10 +1,10 @@
-import React, { Suspense } from "react";
-import Loader from "./Loader";
+import React, { Suspense } from 'react';
+import Loader from './Loader';
 
 const AsyncImport = (Component) => {
-  return () => (
+  return (props) => (
     <Suspense fallback={<Loader />}>
-      <Component />
+      <Component {...props} />
     </Suspense>
   );
 };

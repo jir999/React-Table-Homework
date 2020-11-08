@@ -1,13 +1,11 @@
-import React from "react";
+import React from 'react';
 
-const Loader = () => {
-  return (
-    <tbody>
-      <tr>
-        <td>Loading ...</td>
-      </tr>
-    </tbody>
-  );
-};
+const Loader = () => (
+  <tbody>
+    <tr>
+      <td>Loading ...</td>
+    </tr>
+  </tbody>
+);
 
 export default Loader;
