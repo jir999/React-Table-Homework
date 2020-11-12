@@ -15,9 +15,9 @@ function ThrowError({ time, errorMessage }) {
     if (error) throw new Error(errorMessage);
 
     return (
-        <h1>
+        <tr>
             throwing the error in {time / 1000} seconds
-        </h1>
+        </tr>
     )
 }
 

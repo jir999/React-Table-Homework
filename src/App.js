@@ -15,7 +15,6 @@ export default function App() {
       <ErrorBoundry fallback={<div>Oops something went wrong!</div>}>
         <div className="App">
           <Table />
-          <ThrowError time={3000} errorMessage="first Error" />
         </div>
       </ErrorBoundry>
     </Profiler>

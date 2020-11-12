@@ -3,10 +3,10 @@ import Header from '../Header';
 // import Column from "../Column";
 import Row from '../Row';
 import Footer from '../Footer';
+import ThrowError from "../Error/ThrowError";
 
 const Table = () => {
   const [data, setData] = useState([]);
-  //const [length, setLength] = useState(0);
   const [headerData, setHeaderData] = useState([]);
 
   useEffect(() => {
@@ -23,14 +23,19 @@ const Table = () => {
     console.log("a")
     console.log("headerData", headerData)
     setHeaderData(data[0])
-    //setLength(data.length);
   }, [data])
 
   return (
     <div>
       <table>
         <Header headerData={headerData} />
-        <Row rowData={data} test="test" />
+        {data.map((item, index) => {
+          if (index === 1) {
+            return <ThrowError time={5000} errorMessage="second line Error" />
+          }
+          return <Row index={index} item={item} />
+        })
+        }
         <Footer render={(count) => (<th>{count}</th>)} count={data.length} />
       </table>
     </div>
