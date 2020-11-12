@@ -6,7 +6,8 @@ import Footer from '../Footer';
 
 const Table = () => {
   const [data, setData] = useState([]);
-  const [length, setLength] = useState(0);
+  //const [length, setLength] = useState(0);
+  const [headerData, setHeaderData] = useState([]);
 
   useEffect(() => {
     fetch('./data.json')
@@ -19,15 +20,18 @@ const Table = () => {
   }, []);
 
   useEffect(() => {
-    setLength(data.length);
+    console.log("a")
+    console.log("headerData", headerData)
+    setHeaderData(data[0])
+    //setLength(data.length);
   }, [data])
 
   return (
     <div>
       <table>
-        <Header />
+        <Header headerData={headerData} />
         <Row rowData={data} test="test" />
-        <Footer render={(count) => (<th>{count}</th>)} count={length} />
+        <Footer render={(count) => (<th>{count}</th>)} count={data.length} />
       </table>
     </div>
   );
