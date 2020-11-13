@@ -22,7 +22,9 @@ const Table = () => {
   useEffect(() => {
     console.log("a")
     console.log("headerData", headerData)
-    setHeaderData(data[0])
+    if (data[0]) {
+      setHeaderData(Object.keys(data[0]))   // [name, surName, ...]
+    }
   }, [data])
 
   return (

@@ -1,15 +1,15 @@
 import React from "react";
 
 const Header = ({ headerData }) => {
-  console.log(headerData)
+
 
   return (
     <thead>
       <tr>
-        <th>Name</th>
-        <th>SurName</th>
-        <th>Age</th>
-        <th>PinCode</th>
+        <th>{headerData[0]}</th>
+        <th>{headerData[1]}</th>
+        <th>{headerData[2]}</th>
+        <th>{headerData[3]}</th>
       </tr>
     </thead>
   );
